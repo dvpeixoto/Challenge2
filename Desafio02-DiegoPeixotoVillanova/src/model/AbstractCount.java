@@ -17,6 +17,19 @@ abstract class AbstractCount {
 		dataAnalisys.put(key, (currentValue != null ? currentValue : 0) + 1);
 	}
 
+	final void addBandWithInMap(String line, String pattern) {
+		int positionPattern = line.indexOf(pattern) + pattern.length();
+		int positionBeginBandWidht = positionPattern + 15;
+
+		try {
+			if (line.substring(positionPattern, positionBeginBandWidht).contains("200")) {
+				String bandWidth = line.substring(positionBeginBandWidht, line.length()).split(" ")[0];
+				addToKey(pattern, Integer.valueOf(bandWidth));
+			}
+		} catch (Exception e) {
+		}
+	}
+	
 	abstract String toStringTitle();
 
 	abstract String toStringMessagePattern();

@@ -43,5 +43,5 @@ public class CountTimeNoAccess implements Analysis {
 		return intervalTimeDateList.stream().sorted(Comparator.comparing(IntervalTimeDate::getInterval).reversed())
 				.limit(3).collect(Collectors.toList()).toString();
 	}
-	
+
 }
