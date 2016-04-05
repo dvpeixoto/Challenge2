@@ -57,7 +57,7 @@ public class CountVisitDistinctIP implements Constant, Analysis {
 
 	@Override
 	public String toString() {
-		return "* Total visits distincts by IP: " + countDistinctIp + "\n";
+		return "\n* Total visits distincts by IP: " + countDistinctIp + "\n";
 	}
 
 }
