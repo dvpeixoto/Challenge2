@@ -1,6 +1,8 @@
 package util;
 
 import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Calendar;
 
 public class CountTime {
@@ -26,6 +28,10 @@ public class CountTime {
 	private void printDuration() {
 		printTime("\nBEGIN:", timeStart);
 		printTime("END:", timeEnd);
+	}
+
+	public void printCurrentTime(String simpleName) {
+		System.out.println(LocalDateTime.now().format(DateTimeFormatter.ofPattern("HH:mm:ss.SSS")) + " " + simpleName);
 	}
 
 	private void printTime(String inf, long timeInMillis) {

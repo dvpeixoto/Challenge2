@@ -23,13 +23,13 @@ abstract class AbstractCount {
 
 		try {
 			if (line.substring(positionPattern, positionBeginBandWidht).contains("200")) {
-				String bandWidth = line.substring(positionBeginBandWidht, line.length()).split(" ")[0];
+				String bandWidth = line.substring(positionBeginBandWidht, line.length()).split(" ", 2)[0];
 				addToKey(pattern, Integer.valueOf(bandWidth));
 			}
 		} catch (Exception e) {
 		}
 	}
-	
+
 	abstract String toStringTitle();
 
 	abstract String toStringMessagePattern();

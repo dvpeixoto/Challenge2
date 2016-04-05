@@ -28,7 +28,7 @@ public class CountVisitDistinctIP implements Constant, Analysis {
 	public void collectInformation(String line) {
 		if (line.indexOf(IP_PATTERN) != -1) {
 
-			String[] ipsValid = line.split("- -")[0].split(" ");
+			String[] ipsValid = line.split("- -", 2)[0].split(" ");
 			String ipValidLine = ipsValid[ipsValid.length - 1];
 			String date = line.split(" - - ")[1].substring(1, 21);
 
