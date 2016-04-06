@@ -38,5 +38,5 @@ public class CountSO extends AbstractCount implements Constant, Analysis {
 	String toStringMessagePattern() {
 		return "* The System %s was used %s times.\n";
 	}
-
+	
 }

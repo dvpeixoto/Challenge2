@@ -17,18 +17,15 @@ import util.CountTime;
 public class MainApplication {
 	private CountTime countTime = new CountTime();
 	private List<Analysis> analysisList = new ArrayList<>();
+	
 
 	public static void main(String[] args) throws Exception {
 		new MainApplication();
 	}
 
 	public MainApplication() throws Exception {
-		analysisList.add(new CountVisitDistinctIP());
-		analysisList.add(new CountSO());
-		analysisList.add(new CountBrowser());
-		analysisList.add(new CountBandwidthFormatFile());
-		analysisList.add(new CountTimeNoAccess());
-
+		addAnalysis();
+		
 		List<String> fileLines;
 		fileLines = Files.readAllLines(Paths.get(new File("").getAbsolutePath().concat("\\resources"), "access.log"));
 
@@ -42,6 +39,15 @@ public class MainApplication {
 				countTime.printCurrentTime(analysis.getClass().getSimpleName());
 			}).start();
 		});
+	}
+
+	public void addAnalysis() {
+		analysisList.add(new CountVisitDistinctIP());
+		analysisList.add(new CountBandwidthFormatFile());
+		analysisList.add(new CountTimeNoAccess());
+		analysisList.add(new CountSO());
+		analysisList.add(new CountBrowser());
+		
 	}
 
 }

@@ -27,10 +27,12 @@ public class CountVisitDistinctIP implements Constant, Analysis {
 	@Override
 	public void collectInformation(String line) {
 		if (line.indexOf(IP_PATTERN) != -1) {
-
-			String[] ipsValid = line.split("- -", 2)[0].split(" ");
-			String ipValidLine = ipsValid[ipsValid.length - 1];
-			String date = line.split(" - - ")[1].substring(1, 21);
+			
+			String[] divisao = line.split(" - - ", 2);
+			
+			String[] ips = divisao[0].split(" ");
+			String ipValidLine = ips[ips.length - 1];
+			String date = divisao[1].substring(1, 21);
 
 			LocalDateTime stringToDate = LocalDateTime.parse(date,
 					DateTimeFormatter.ofPattern("dd/MMM/yyyy:HH:mm:ss").withLocale(Locale.ENGLISH));

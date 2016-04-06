@@ -4,7 +4,7 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
 public class IntervalTimeDate {
-	private long interval=0;
+	private long interval = 0;
 	private LocalDateTime date;
 	private LocalDateTime dateBefore;
 
@@ -37,12 +37,12 @@ public class IntervalTimeDate {
 	public void setDateBefore(LocalDateTime dateBefore) {
 		this.dateBefore = dateBefore;
 	}
-	
+
 	@Override
 	public String toString() {
 		return "\nInterval time in minutes: " + (interval / 60000) + " and date: "
-				+ date.format(DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss")) + " to "
-				+ dateBefore.format(DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss"));
+				+ date.format(DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss a")) + " to "
+				+ dateBefore.format(DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss a"));
 	}
 
 }
