@@ -9,29 +9,29 @@ public class CountBandwidthFormatFile extends AbstractCount implements Constant,
 	public void collectInformation(String line) {
 		if (line.indexOf(JPG_PATTERN) != -1) {
 			addBandWithInMap(line, JPG_PATTERN);
-		}
-		if (line.indexOf(PNG_PATTERN) != -1) {
+		
+		} else if (line.indexOf(PNG_PATTERN) != -1) {
 			addBandWithInMap(line, PNG_PATTERN);
-		}
-		if (line.indexOf(GIF_PATTERN) != -1) {
+		
+		} else if (line.indexOf(GIF_PATTERN) != -1) {
 			addBandWithInMap(line, GIF_PATTERN);
-		}
-		if (line.indexOf(JS_PATTERN) != -1) {
+		
+		} else if (line.indexOf(JS_PATTERN) != -1) {
 			addBandWithInMap(line, JS_PATTERN);
-		}
-		if (line.indexOf(CSS_PATTERN) != -1) {
+		
+		} else if (line.indexOf(CSS_PATTERN) != -1) {
 			addBandWithInMap(line, CSS_PATTERN);
-		}
-		if (line.indexOf(TXT_PATTERN) != -1) {
+		
+		} else if (line.indexOf(TXT_PATTERN) != -1) {
 			addBandWithInMap(line, TXT_PATTERN);
-		}
-		if (line.indexOf(CSV_PATTERN) != -1) {
+		
+		} else if (line.indexOf(CSV_PATTERN) != -1) {
 			addBandWithInMap(line, CSV_PATTERN);
-		}
-		if (line.indexOf(I_PATTERN) != -1) {
+		
+		} else if (line.indexOf(I_PATTERN) != -1) {
 			addBandWithInMap(line, I_PATTERN);
-		}
-		if (line.indexOf(DOCX_PATTERN) != -1) {
+		
+		} else if (line.indexOf(DOCX_PATTERN) != -1) {
 			addBandWithInMap(line, DOCX_PATTERN);
 		}
 	}

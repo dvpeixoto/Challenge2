@@ -17,7 +17,6 @@ import util.CountTime;
 public class MainApplication {
 	private CountTime countTime = new CountTime();
 	private List<Analysis> analysisList = new ArrayList<>();
-	
 
 	public static void main(String[] args) throws Exception {
 		new MainApplication();
@@ -25,7 +24,7 @@ public class MainApplication {
 
 	public MainApplication() throws Exception {
 		addAnalysis();
-		
+
 		List<String> fileLines;
 		fileLines = Files.readAllLines(Paths.get(new File("").getAbsolutePath().concat("\\resources"), "access.log"));
 
@@ -47,7 +46,6 @@ public class MainApplication {
 		analysisList.add(new CountTimeNoAccess());
 		analysisList.add(new CountSO());
 		analysisList.add(new CountBrowser());
-		
 	}
 
 }
